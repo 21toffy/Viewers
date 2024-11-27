@@ -1,0 +1,12 @@
+authtoken: xxxxxxxxx
+region: us
+version: 2
+tunnels:
+   webapp:
+      proto: http
+      addr: 0.0.0.0:3000
+      hostname: intronhealth.site.xxxx.ngrok.io
+   admin:
+      proto: tcp
+      addr: 22
+      remote_addr: x.tcp.xx.ngrok.io:xxxx

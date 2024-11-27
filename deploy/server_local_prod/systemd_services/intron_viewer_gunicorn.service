@@ -1,0 +1,17 @@
+[Unit]
+Description=gunicorn daemon
+After=network.target
+
+[Service]
+User=intron
+Group=intron
+Restart=always
+RestartSec=120
+StartLimitAction=reboot
+WorkingDirectory=/home/intron/viewer
+StandardOutput=append:/home/intron/log_intron_viewer_gunicorn_service_stdout.log
+StandardError=append:/home/intron/log_intron_viewer_gunicorn_service_stderr.log
+ExecStart=/bin/bash /home/intron/viewer/deploy/server_local_prod/script_viewer_start_app.sh prod
+
+[Install]
+WantedBy=multi-user.target

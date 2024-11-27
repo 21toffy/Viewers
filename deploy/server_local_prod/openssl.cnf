@@ -1,0 +1,22 @@
+[req]
+default_bits  = 2048
+distinguished_name = req_distinguished_name
+req_extensions = req_ext
+x509_extensions = v3_req
+prompt = no
+
+[req_distinguished_name]
+countryName = NG
+organizationName = intron
+commonName = 127.0.0.1
+emailAddress = engineers@intron.io
+
+[req_ext]
+subjectAltName = IP:127.0.0.1
+
+[v3_req]
+basicConstraints = CA:TRUE
+subjectAltName = IP:127.0.0.1
+
+[alt_names]
+IP.1 = 127.0.0.1
