@@ -37,7 +37,7 @@ retry() {
 # echo "Building the frontend application..."
 # retry ssh $EC2_USER@$EC2_HOST "cd $FRONTEND_REPO_DIR
 
-retry sudo yarn install && sudo yarn build
+retry sudo yarn config set workspaces-experimental true && sudo yarn install && sudo yarn build
 
 # Step 3: Configure NGINX (run once, check if already configured)
 echo "Setting up NGINX configuration if it's not already set up..."
